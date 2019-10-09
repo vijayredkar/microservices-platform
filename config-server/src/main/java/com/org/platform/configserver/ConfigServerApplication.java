@@ -1,4 +1,4 @@
-package com.company.ecom.configserver;
+package com.org.platform.configserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

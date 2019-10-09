@@ -1,4 +1,4 @@
-package com.company.ecom.configserver;
+package com.org.platform.configserver;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
