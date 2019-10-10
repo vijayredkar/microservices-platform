@@ -1,0 +1,19 @@
+server:
+  port: 8084
+  
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    config:
+      uri: http://localhost:8888  
+      
+zuul:
+  prefix: /api
+  routes:
+    catalog-svc:
+      path: /ecom/catalog/**
+      service: catalog-svc
+   
+  
+    
