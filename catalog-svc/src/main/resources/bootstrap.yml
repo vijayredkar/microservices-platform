@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: catalog-svc
+  cloud:
+    config:
+      uri: http://localhost:8888    
+
+management:
+  security:
+    enabled: false
