@@ -1,4 +1,4 @@
-package com.org.business.catalog;
+package com.org.business.catalog.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

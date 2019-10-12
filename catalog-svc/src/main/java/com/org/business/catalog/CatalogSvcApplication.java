@@ -11,6 +11,8 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+import com.org.business.catalog.config.RibbonConfig;
+
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableHystrix

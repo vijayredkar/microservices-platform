@@ -1,4 +1,4 @@
-package com.org.business.catalog;
+package com.org.business.catalog.config;
 
 import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.IPing;
