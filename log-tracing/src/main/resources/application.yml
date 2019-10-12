@@ -1,0 +1,16 @@
+server:
+  port: 9411
+
+spring:
+  application:
+    name: log-tracing
+  cloud:
+    config:
+      uri: http://localhost:8888
+  sleuth:
+    stream:
+      enabled: false    
+          
+zipkin:
+  storage:
+    type: mem
