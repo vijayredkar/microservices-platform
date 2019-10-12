@@ -1,0 +1,9 @@
+server:
+  port: 9087
+  
+spring:
+  application:
+    name: pricing-svc
+  cloud:
+    config:
+      uri: http://localhost:8888
