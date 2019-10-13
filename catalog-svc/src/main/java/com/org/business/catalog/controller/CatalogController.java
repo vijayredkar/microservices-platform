@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 @RefreshScope
 @RestController
 //@RequestMapping("/api")
@@ -21,7 +23,7 @@ public class CatalogController {
     @Value("${timeout: Default 5}")
     String paramTimeout;
     
-    
+    @HystrixCommand
     @GetMapping("/items")
     //public ResponseEntity<String> getCatalog()
     public String getCatalog()
@@ -34,7 +36,7 @@ public class CatalogController {
     
     
     
-    
+    @HystrixCommand
     @GetMapping("/param/timeout")
     public String getParam()
     {
