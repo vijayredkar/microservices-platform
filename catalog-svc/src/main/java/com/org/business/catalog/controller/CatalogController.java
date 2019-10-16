@@ -1,5 +1,7 @@
 package com.org.business.catalog.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -17,6 +19,8 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 @RequestMapping("/inventory")
 public class CatalogController {
 
+	Logger logger = LoggerFactory.getLogger(CatalogController.class);
+	
     @Autowired
     RestTemplate restTemplate;
     
@@ -29,6 +33,7 @@ public class CatalogController {
     public String getCatalog()
     {
         System.out.println("---------------------------Catalog Service hit -----------------");
+        logger.info("---------------------------Catalog Service hit log-----------------");
         //return restTemplate.getForObject("http://localhost:9085/pricing/items", String.class);
         return restTemplate.getForObject("http://pricing-svc/pricing/items", String.class);
     }
@@ -40,7 +45,8 @@ public class CatalogController {
     @GetMapping("/param/timeout")
     public String getParam()
     {
-        System.out.println("---------------------------Catalog Service getParam hit -----------------");        
+        System.out.println("---------------------------Catalog Service getParam hit -----------------");
+        logger.info("---------------------------Catalog Service getParam hit log-----------------");
         return paramTimeout;
     }
 }
