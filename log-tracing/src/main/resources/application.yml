@@ -9,7 +9,9 @@ spring:
       uri: http://localhost:8888
   sleuth:
     stream:
-      enabled: false    
+      enabled: false
+  main:
+    allow-bean-definition-overriding: true             
           
 zipkin:
   storage:
