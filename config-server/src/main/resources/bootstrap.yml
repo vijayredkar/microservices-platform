@@ -3,4 +3,5 @@ spring:
     config:
       server:
         git:
-          uri: C:\Users\S739559\Vijay\Project\spring-cloud\ecommerce\configRepo
+          #uri: file://C:/Users/S739559/Vijay/Project/spring-cloud/ecommerce/configRepo/  
+          uri:  https://github.com/vijayredkar/microservices-platform.git
