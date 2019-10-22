@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: catalog-svc
+  cloud:
+    config:
+      uri: http://localhost:8888    
+  zipkin:
+    base-url: http://localhost:9412/
+  sleuth:
+    sampler:
+      probability: 1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

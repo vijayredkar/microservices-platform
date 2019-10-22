@@ -1,0 +1,18 @@
+server:
+  port: 9411
+
+spring:
+  application:
+    name: log-tracing
+  cloud:
+    config:
+      uri: http://localhost:8888
+  sleuth:
+    stream:
+      enabled: false
+  main:
+    allow-bean-definition-overriding: true             
+          
+zipkin:
+  storage:
+    type: mem
