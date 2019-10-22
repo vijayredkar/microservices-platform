@@ -4,10 +4,3 @@ server:
 spring:
  application:
     name: ecom-config-server
- profiles:
-    active: native
- cloud:
-    config:
-      server:
-        native:
-          search-locations: configs

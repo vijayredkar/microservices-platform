@@ -24,7 +24,8 @@ public class CatalogController {
     @Autowired
     RestTemplate restTemplate;
     
-    @Value("${timeout: Default 5}")
+    //@Value("${timeout: Default 5}")
+    @Value("${timeout: 8}")
     String paramTimeout;
     
     @HystrixCommand
@@ -32,8 +33,8 @@ public class CatalogController {
     //public ResponseEntity<String> getCatalog()
     public String getCatalog()
     {
-        System.out.println("---------------------------Catalog Service hit -----------------");
-        logger.info("---------------------------Catalog Service hit log-----------------");
+        System.out.println("---------------------------Catalog Service hit -----------------paramTimeout "+paramTimeout);
+        logger.info("---------------------------Catalog Service hit log-----------------paramTimeout "+paramTimeout);
         //return restTemplate.getForObject("http://localhost:9085/pricing/items", String.class);
         return restTemplate.getForObject("http://pricing-svc/pricing/items", String.class);
     }
