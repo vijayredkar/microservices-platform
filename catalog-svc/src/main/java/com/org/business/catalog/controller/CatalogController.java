@@ -34,7 +34,7 @@ public class CatalogController {
     public String getCatalog()
     {
         System.out.println("---------------------------Catalog Service hit -----------------paramTimeout "+paramTimeout);
-        logger.info("---------------------------Catalog Service hit log-----------------paramTimeout "+paramTimeout);
+        logger.info("---------------------------Catalog Service hit log -----------------paramTimeout "+paramTimeout);
         //return restTemplate.getForObject("http://localhost:9085/pricing/items", String.class);
         return restTemplate.getForObject("http://pricing-svc/pricing/items", String.class);
     }
