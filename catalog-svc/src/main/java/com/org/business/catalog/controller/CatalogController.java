@@ -28,13 +28,16 @@ public class CatalogController {
     @Value("${timeout: 8}")
     String paramTimeout;
     
+    @Value("${source: unknown}")
+    String configSrc;
+    
     @HystrixCommand
     @GetMapping("/items")
     //public ResponseEntity<String> getCatalog()
     public String getCatalog()
     {
-        System.out.println("---------------------------Catalog Service hit -----------------paramTimeout "+paramTimeout);
-        logger.info("---------------------------Catalog Service hit log-----------------paramTimeout "+paramTimeout);
+    	logger.info("---------------------------Catalog Service hit -----------------paramTimeout "+paramTimeout);
+        logger.info("---------------------------Catalog Service hit log -----------------configSrc "+configSrc);
         //return restTemplate.getForObject("http://localhost:9085/pricing/items", String.class);
         return restTemplate.getForObject("http://pricing-svc/pricing/items", String.class);
     }
