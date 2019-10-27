@@ -28,19 +28,16 @@ public class PricingController {
     @HystrixCommand(fallbackMethod="getDefaultPricing")
     public String getPricing()
     {
-    	logger.info("---------------------------pricing Service hit -----------------paramTimeout "+paramTimeout);
-        logger.info("---------------------------pricing Service hit log -----------------configSrc "+configSrc);
-        /*String a= null;
-        a.length();*/
+    	logger.info("pricing Service configSrc "+configSrc);
+    	logger.info("pricing Service paramTimeout "+paramTimeout);        
         
-        return "price of item";        
+        return "$ 25.00";        
     }
     
     public String getDefaultPricing()
     {
-        System.out.println("---------------- pricing defaulted ");
-        logger.info("---------------- pricing defaulted log");
-        return "pricing defaulted";
+        logger.info("pricing fault tolerance invoked ");
+        return "$ 10.00";
     }
 
 }

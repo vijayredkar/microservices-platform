@@ -3,4 +3,4 @@ server:
 
 spring:
  application:
-    name: ecom-config-server
+    name: config-server
