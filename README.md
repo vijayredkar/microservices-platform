@@ -107,6 +107,5 @@ pricing-svc properties refresh -     localhost:9087/actuator/refresh
    
    pricing-svc Actuator endpoints can be viewed via http://localhost:9087/actuator
 
-10- Swagger Dashboard
-    Swagger Dashboard can be accessed via http://localhost:9080/swagger-ui.html
+10- Swagger Dashboard can be accessed via http://localhost:9080/swagger-ui.html
     
