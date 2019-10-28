@@ -9,7 +9,7 @@ spring:
       uri: http://localhost:8888
   sleuth:
     stream:
-      enabled: false
+      enabled: true
   main:
     allow-bean-definition-overriding: true             
           

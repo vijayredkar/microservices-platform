@@ -1,4 +1,4 @@
-package com.org.business.pricing;
+package com.org.business.pricing.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
