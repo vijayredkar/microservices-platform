@@ -16,7 +16,7 @@
 
 Since the focus of this implementation is creating platform components, hence the micro services related to business application are kept trivial.
 
-In the business logic flow the catalog-svc which calls the pricing-svc synchronously using REST to gather the item and the price.
+In the business logic flow the catalog-svc calls the pricing-svc synchronously using REST to gather the item and the price.
 
 Steps to build and run- 
 
@@ -96,15 +96,18 @@ pricing-svc properties refresh -     localhost:9087/actuator/refresh
    java -jar target/pricing-svc.jar
 
 8- Hystrix Dashboard 
+
    catalog-svc Hystrix Dashboard can be accessed via http://localhost:9080/hystrix
    
    pricing-svc Hystrix Dashboard can be accessed via http://localhost:9087/hystrix
 
 9- Actuator 
+
    catalog-svc Actuator endpoints can be viewed via http://localhost:9080/actuator
    
    pricing-svc Actuator endpoints can be viewed via http://localhost:9087/actuator
 
 10- Swagger Dashboard
+
     Swagger Dashboard can be accessed via http://localhost:9080/swagger-ui.html
     
