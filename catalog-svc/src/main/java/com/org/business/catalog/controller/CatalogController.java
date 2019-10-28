@@ -15,7 +15,6 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @RefreshScope
 @RestController
-//@RequestMapping("/api")
 @RequestMapping("/inventory")
 public class CatalogController {
 
@@ -24,7 +23,6 @@ public class CatalogController {
     @Autowired
     RestTemplate restTemplate;
     
-    //@Value("${timeout: Default 5}")
     @Value("${timeout: 8}")
     String paramTimeout;
     
@@ -33,24 +31,30 @@ public class CatalogController {
     
     @HystrixCommand
     @GetMapping("/items")
-    //public ResponseEntity<String> getCatalog()
     public String getCatalog()
     {
-    	logger.info("---------------------------Catalog Service hit -----------------paramTimeout "+paramTimeout);
-        logger.info("---------------------------Catalog Service hit log -----------------configSrc "+configSrc);
-        //return restTemplate.getForObject("http://localhost:9085/pricing/items", String.class);
-        return restTemplate.getForObject("http://pricing-svc/pricing/items", String.class);
-    }
+    	logger.info("Catalog Service print configSrc "+configSrc);
+    	logger.info("Catalog Service print paramTimeout "+paramTimeout);
+    	
+        //String itemPrice =  return restTemplate.getForObject("http://localhost:9085/pricing/items", String.class);//without API-Gateway support
+        String itemPrice = restTemplate.getForObject("http://pricing-svc/pricing/items", String.class);//with API-Gateway support
+        
+        //return "ITEM NAME : Coffee Mug : " + "PRICE : "+itemPrice;
+        return formatResponse(itemPrice);
+    }     
     
-    
-    
-    
-    @HystrixCommand
-    @GetMapping("/param/timeout")
-    public String getParam()
+    private String formatResponse(String input)
     {
-        System.out.println("---------------------------Catalog Service getParam hit -----------------");
-        logger.info("---------------------------Catalog Service getParam hit log-----------------");
-        return paramTimeout;
+    	return
+    			"<html><table border=\"1\">\r\n" + 
+    			"  <tr>\r\n" + 
+    			"    <th>ITEM</th>\r\n" + 
+    			"    <th>PRICE</th>\r\n" + 
+    			"  </tr>\r\n" + 
+    			"  <tr>\r\n" + 
+    			"    <td>Coffee Mug</td>\r\n" + 
+    			"    <td>" +  input  + "</td>\r\n" + 
+    			"  </tr>\r\n" + 
+    			"</table></html>";    	
     }
 }
