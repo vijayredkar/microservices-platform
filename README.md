@@ -50,8 +50,8 @@ pricing-svc properties refresh -     localhost:9087/actuator/refresh
    Eureka Service Discovery can be accessed via   http://localhost:8761/
 
 4- API Gateway\
-   cd microservices-platform/api-gateway\   
-   mvn clean install\   
+   cd microservices-platform/api-gateway\
+   mvn clean install\
    java -jar target/api-gateway.jar
 
 5- Distributed Log Tracing\
