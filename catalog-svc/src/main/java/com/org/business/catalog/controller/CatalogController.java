@@ -42,11 +42,17 @@ public class CatalogController {
         //return "ITEM NAME : Coffee Mug : " + "PRICE : "+itemPrice;
         return formatResponse(itemPrice);
     }     
-    
+        
     private String formatResponse(String input)
-    {
-    	return
-    			"<html><table border=\"1\">\r\n" + 
+    { 
+    	return 
+    			"<html>\r\n" + 
+    			"<head>\r\n" + 
+    			"<H1 align=\"center\">Online Catalog</H1>\r\n" +
+    			"</head>\r\n" + 
+    			"<body>\r\n" + 
+    			"\r\n" + 
+    			"<table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-left:auto;margin-right:auto;\">\r\n" +
     			"  <tr>\r\n" + 
     			"    <th>ITEM</th>\r\n" + 
     			"    <th>PRICE</th>\r\n" + 
@@ -55,6 +61,9 @@ public class CatalogController {
     			"    <td>Coffee Mug</td>\r\n" + 
     			"    <td>" +  input  + "</td>\r\n" + 
     			"  </tr>\r\n" + 
-    			"</table></html>";    	
+    			"</table>\r\n" + 
+    			"\r\n" + 
+    			"</body>\r\n" + 
+    			"</html>";    	
     }
 }
