@@ -65,7 +65,7 @@ pricing-svc properties refresh -     localhost:9087/actuator/refresh
 
 8- Hystrix Dashboard\
 
-   catalog-svc Hystrix Dashboard can be accessed via http://localhost:9080/hystrix\  
+   catalog-svc Hystrix Dashboard can be accessed via http://localhost:9080/hystrix\
    pricing-svc Hystrix Dashboard can be accessed via http://localhost:9087/hystrix
 
 9- Actuator\
