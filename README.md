@@ -1,29 +1,21 @@
          Platform components required for a Microservice Architecture.
 
-1-Centralized Configuration Server - Implemented with Spring Cloud Config Server
-
-2-Service Discovery		            - Implemented with Eureka
-
-3-API-Gateway                      - Implemented with Zuul
-
-4-Distributed Log Tracing		      - Implemented with Sleuth + Zipkin Server + Zipkin UI
-
-5-Circuit Breaker/Fault Tolerance  - Implemented with Hystrix
-
-6-Client Side Load Balancer	      - Ribbon
-
+1-Centralized Configuration Server - Implemented with Spring Cloud Config Server\
+2-Service Discovery		            - Implemented with Eureka\
+3-API-Gateway                      - Implemented with Zuul\
+4-Distributed Log Tracing		      - Implemented with Sleuth + Zipkin Server + Zipkin UI\
+5-Circuit Breaker/Fault Tolerance  - Implemented with Hystrix\
+6-Client Side Load Balancer	      - Ribbon\
 7-API Documentation		            - Swagger
 
-Since the focus of this implementation is creating platform components, hence the micro services related to business application are kept trivial.
-
+Since the focus of this implementation is creating platform components, hence the micro services related to business application are kept trivial.\
 In the business logic flow the catalog-svc calls the pricing-svc synchronously using REST to gather the item and the price.
+
 
 Steps to build and run- 
 
-Pre-requisites -
-
-JDK (preferably 1.8)
-
+Pre-requisites -\
+JDK (preferably 1.8)\
 Maven (preferably >= 3.x)
 
 1- Checkout the master in to your local directory.\
@@ -55,29 +47,29 @@ pricing-svc properties refresh -     localhost:9087/actuator/refresh
    java -jar target/api-gateway.jar
 
 5- Distributed Log Tracing\
-   cd microservices-platform/log-manage\   
-   mvn clean install\   
+   cd microservices-platform/log-manage\
+   mvn clean install\
    java -jar target/log-manage.jar\
 
    Zipkin UI can be accessed via http://localhost:9412/zipkin/
 
 6- catalog-svc  - Business Microservice Service\
-   cd microservices-platform/catalog-svc\   
-   mvn clean install\   
+   cd microservices-platform/catalog-svc\
+   mvn clean install\
    java -jar target/catalog-svc.jar
 
 7- pricing-svc  - Business Microservice Service\
-   cd microservices-platform/pricing-svc\   
-   mvn clean install\   
+   cd microservices-platform/pricing-svc\
+   mvn clean install\
    java -jar target/pricing-svc.jar
 
 8- Hystrix Dashboard\
 
-   catalog-svc Hystrix Dashboard can be accessed via http://localhost:9080/hystrix\   
+   catalog-svc Hystrix Dashboard can be accessed via http://localhost:9080/hystrix\  
    pricing-svc Hystrix Dashboard can be accessed via http://localhost:9087/hystrix
 
 9- Actuator\
-   catalog-svc Actuator endpoints can be viewed via http://localhost:9080/actuator\   
+   catalog-svc Actuator endpoints can be viewed via http://localhost:9080/actuator\
    pricing-svc Actuator endpoints can be viewed via http://localhost:9087/actuator
 
 10- Swagger Dashboard can be accessed via http://localhost:9080/swagger-ui.html
