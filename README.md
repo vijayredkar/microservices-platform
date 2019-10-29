@@ -69,7 +69,7 @@ pricing-svc properties refresh -     localhost:9087/actuator/refresh
    
    pricing-svc Hystrix Dashboard can be accessed via http://localhost:9087/hystrix
 
-9- Actuator\
+9- Actuator
 
    catalog-svc Actuator endpoints can be viewed via http://localhost:9080/actuator
    
@@ -79,7 +79,8 @@ pricing-svc properties refresh -     localhost:9087/actuator/refresh
 
 11- Verify from the Eureka Dashboard (via  http://localhost:8761/) that api-gateway, catalog-svc and pricing-svc are up and running 
 
-12- The catalog-svc can be accessed via the URL http://localhost:8084/api/ecom/catalog/inventory/items\
+12- The catalog-svc can be accessed via the URL http://localhost:8084/api/ecom/catalog/inventory/items
+
     This call is intercepted by the api-gateway and dynamically routed to the catalog-svc.
     
 13- The output on the browser will show a table with the item name and it's coresponding price fetched from the pricing-svc.
