@@ -49,7 +49,7 @@ pricing-svc properties refresh -     localhost:9087/actuator/refresh
 5- Distributed Log Tracing\
    cd microservices-platform/log-manage\
    mvn clean install\
-   java -jar target/log-manage.jar\
+   java -jar target/log-manage.jar
 
    Zipkin UI can be accessed via http://localhost:9412/zipkin/
 
@@ -64,11 +64,15 @@ pricing-svc properties refresh -     localhost:9087/actuator/refresh
    java -jar target/pricing-svc.jar
 
 8- Hystrix Dashboard\
-   catalog-svc Hystrix Dashboard can be accessed via http://localhost:9080/hystrix\
+   
+   catalog-svc Hystrix Dashboard can be accessed via http://localhost:9080/hystrix
+   
    pricing-svc Hystrix Dashboard can be accessed via http://localhost:9087/hystrix
 
 9- Actuator\
-   catalog-svc Actuator endpoints can be viewed via http://localhost:9080/actuator\
+
+   catalog-svc Actuator endpoints can be viewed via http://localhost:9080/actuator
+   
    pricing-svc Actuator endpoints can be viewed via http://localhost:9087/actuator
 
 10- Swagger Dashboard can be accessed via http://localhost:9080/swagger-ui.html
