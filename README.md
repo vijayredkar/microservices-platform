@@ -63,7 +63,7 @@ pricing-svc properties refresh -     localhost:9087/actuator/refresh
    mvn clean install\
    java -jar target/pricing-svc.jar
 
-8- Hystrix Dashboard\
+8- Hystrix Dashboard
    
    catalog-svc Hystrix Dashboard can be accessed via http://localhost:9080/hystrix
    
